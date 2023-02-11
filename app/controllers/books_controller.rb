@@ -12,6 +12,16 @@ class BooksController < ApplicationController
     redirect_to '/top'
   end
 
+   def index
+    @books = Books.all
+  end
+
+  def show
+    @books = Books.find(params[:id])
+  end
+:
+
+
 
   private
   # ストロングパラメータ
