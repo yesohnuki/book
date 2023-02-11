@@ -11,9 +11,9 @@
   <tr>
     <tb>リーダブルコード</tb>
     <tb>より良いコードを書くためのシンプルで実践的なテクニック</tb>
-    <tb>
-      <a class="show_129666" href="/books/129666">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129666" href="/books/129666/edit">Edit</a>
     </tb>
@@ -24,9 +24,9 @@
   <tr>
     <tb>たのしいRuby</tb>
     <tb>Rubyの入門におすすめです</tb>
-    <tb>
-      <a class="show_129668" href="/books/129668">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129668" href="/books/129668/edit">Edit</a>
     </tb>
@@ -37,9 +37,9 @@
   <tr>
     <tb>入門Git</tb>
     <tb>gitについての気品操作から内部構造まで解説してくれます</tb>
-    <tb>
-      <a class="show_129669" href="/books/129669">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129669" href="/books/129669/edit">Edit</a>
     </tb>
@@ -50,9 +50,9 @@
   <tr>
     <tb>アルゴリズム図鑑</tb>
     <tb>アルゴリズムについてカラーイラストでしっかり解説してくれます</tb>
-    <tb>
-      <a class="show_129670" href="/books/129670">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129670" href="/books/129670/edit">Edit</a>
     </tb>
@@ -63,9 +63,9 @@
   <tr>
     <tb>達人プログラマー</tb>
     <tb>プログラマー入門者は必読！</tb>
-    <tb>
-      <a class="show_129671" href="/books/129671">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129671" href="/books/129671/edit">Edit</a>
     </tb>
@@ -76,9 +76,9 @@
   <tr>
     <tb>データベース実践入門</tb>
     <tb>効率的なSQL文を教えてくれます</tb>
-    <tb>
-      <a class="show_129672" href="/books/129672">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129672" href="/books/129672/edit">Edit</a>
     </tb>
@@ -89,9 +89,9 @@
   <tr>
     <tb>ac</tb>
     <tb>ac</tb>
-    <tb>
-      <a class="show_129673" href="/books/129673">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129673" href="/books/129673/edit">Edit</a>
     </tb>
@@ -102,9 +102,9 @@
   <tr>
     <tb>あ</tb>
     <tb>ii</tb>
-    <tb>
-      <a class="show_129674" href="/books/129674">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129674" href="/books/129674/edit">Edit</a>
     </tb>
@@ -115,9 +115,9 @@
   <tr>
     <tb>あ</tb>
     <tb>ii</tb>
-    <tb>
-      <a class="show_129675" href="/books/129675">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129675" href="/books/129675/edit">Edit</a>
     </tb>
@@ -128,9 +128,9 @@
   <tr>
     <tb>トラブル知らずのシステム設計</tb>
     <tb>システム設計の要点を図解で説明してくれますaaa</tb>
-    <tb>
-      <a class="show_129667" href="/books/129667">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129667" href="/books/129667/edit">Edit</a>
     </tb>
@@ -141,9 +141,9 @@
   <tr>
     <tb>1234</tb>
     <tb>5678</tb>
-    <tb>
-      <a class="show_129677" href="/books/129677">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129677" href="/books/129677/edit">Edit</a>
     </tb>
@@ -154,9 +154,9 @@
   <tr>
     <tb>test</tb>
     <tb>test</tb>
-    <tb>
-      <a class="show_129678" href="/books/129678">Show</a>
-    </tb>
+    <span>
+      <%= link_to book.title, "/books/#{book.id}" %>
+    </span>
     <tb>
       <a class="edit_129678" href="/books/129678/edit">Edit</a>
     </tb>
@@ -169,7 +169,7 @@
 
 <h1>New book</h1>
 
-<%= form_with model: Books.new do |f| %>
+<%= form_with model: Book.new do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
 

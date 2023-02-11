@@ -1,31 +1,40 @@
 class BooksController < ApplicationController
   def index
-      @books = Books.index
+      @books = Book.all
   end
 
   def create
 
-    books = Books.index(books_params)
+    book = Books.index(book_params)
 
-    books.save
+    book.save
 
-    redirect_to '/top'
+    redirect_to '/homes'
   end
 
-   def index
-    @books = Books.all
+   def show
+    @book = Book.find(129666)
+    @book = Book.find(129667)
+    @book = Book.find(129668)
+    @book = Book.find(129669)
+    @book = Book.find(129670)
+    @book = Book.find(129671)
+    @book = Book.find(129672)
+    @book = Book.find(129673)
+    @book = Book.find(129674)
+    @book = Book.find(129675)
+    @book = Book.find(129676)
+    @book = Book.find(129677)
+    @book = Book.find(129678)
   end
 
-  def show
-    @books = Books.find(params[:id])
-  end
-:
+
 
 
 
   private
   # ストロングパラメータ
-  def books_params
-    params.require(:books).permit(:title, :body)
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end
