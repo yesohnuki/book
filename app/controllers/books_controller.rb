@@ -1,34 +1,51 @@
 class BooksController < ApplicationController
   def index
       @books = Book.all
+      @book = Book.new
   end
 
   def create
-
-    book = Books.index(book_params)
-
-    book.save
-
-    redirect_to '/homes'
+    @book = Book.new(book_params)
+    if @book.save
+      flash[:notice] = "Book was successfully created."
+      redirect_to book_path(@book)
+    else
+      @books = Book.all
+      render "index"
+    end
   end
 
-   def show
-    @book = Book.find(129666)
-    @book = Book.find(129667)
-    @book = Book.find(129668)
-    @book = Book.find(129669)
-    @book = Book.find(129670)
-    @book = Book.find(129671)
-    @book = Book.find(129672)
-    @book = Book.find(129673)
-    @book = Book.find(129674)
-    @book = Book.find(129675)
-    @book = Book.find(129676)
-    @book = Book.find(129677)
-    @book = Book.find(129678)
+  def show
+    @book = Book.find(params[:id])
   end
 
+  def new
+  end
 
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+  if @book.update(book_params)
+    if @book.save
+      flash[:notice] = "Book was successfully updated."
+      redirect_to book_path(@book)
+    else
+      @books = Book.all
+      render "index"
+    end
+    @book.update(book_params)
+    redirect_to book_path
+    flash[:notice] = "Book was successfully created."
+  end
+
+  def destroy
+    book = Book.find(params[:id])  # データ（レコード）を1件取得
+    book.destroy  # データ（レコード）を削除
+    redirect_to '/books'  # 投稿一覧画面へリダイレクト
+  end
 
 
 
